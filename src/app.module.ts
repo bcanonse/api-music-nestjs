@@ -3,7 +3,6 @@ import { ConfigModule } from '@nestjs/config';
 
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-
 import { environments, validate } from './config';
 import config from './config/config';
 

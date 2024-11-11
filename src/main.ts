@@ -1,17 +1,18 @@
-import { NestFactory, Reflector } from '@nestjs/core';
-import { AppModule } from './app.module';
-import { ConfigService } from '@nestjs/config';
-import { API, CORS } from './config';
-import helmet from 'helmet';
 import {
   BadRequestException,
   ClassSerializerInterceptor,
   ValidationPipe,
 } from '@nestjs/common';
+import { ConfigService } from '@nestjs/config';
+import { NestFactory, Reflector } from '@nestjs/core';
 import {
   DocumentBuilder,
   SwaggerModule,
 } from '@nestjs/swagger';
+import helmet from 'helmet';
+
+import { AppModule } from './app.module';
+import { API, CORS } from './config';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
