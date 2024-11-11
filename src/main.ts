@@ -37,9 +37,6 @@ async function bootstrap() {
       whitelist: true,
       forbidNonWhitelisted: true,
       transform: true,
-      transformOptions: {
-        enableImplicitConversion: true,
-      },
       disableErrorMessages: env === 'production',
       exceptionFactory: (errors) => {
         const result = errors.map((error) => ({
