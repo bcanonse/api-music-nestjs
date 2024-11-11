@@ -3,9 +3,9 @@ import {
   ConfigService,
 } from '@nestjs/config';
 import { DataSource, DataSourceOptions } from 'typeorm';
-import { SnakeNamingStrategy } from 'typeorm-naming-strategies';
 
 import { getSsl } from './get-ssl';
+import { CustomNamingStrategy } from './naming.strategy';
 import { environments } from '../config/index';
 
 const ssl = getSsl();
@@ -22,7 +22,7 @@ export const DataSourceConfig: DataSourceOptions = {
   url: configService.get('DATABASE_URL'),
   entities: [__dirname + '/../**/*.entity{.ts,.js}'],
   synchronize: false,
-  namingStrategy: new SnakeNamingStrategy(),
+  namingStrategy: new CustomNamingStrategy(),
   migrations: [__dirname + '/../../migrations/*.ts'],
   migrationsTableName: 'migrations',
 };
