@@ -6,6 +6,7 @@ import { AppService } from './app.service';
 import { environments, validate } from './config';
 import config from './config/config';
 import { DatabaseModule } from './database/database.module';
+import { SongsModule } from './songs/songs.module';
 
 @Module({
   imports: [
@@ -18,6 +19,7 @@ import { DatabaseModule } from './database/database.module';
       cache: true,
     }),
     DatabaseModule,
+    SongsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
