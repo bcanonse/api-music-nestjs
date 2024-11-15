@@ -53,9 +53,7 @@ export class SongsService {
     const deleted: DeleteResult =
       await this.repository.delete(song.id);
 
-    if (deleted.affected === 0) return;
-
-    return true;
+    return deleted.affected > 0;
   }
 
   async paginate(
